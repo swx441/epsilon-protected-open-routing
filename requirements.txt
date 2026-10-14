@@ -1,0 +1,9 @@
+# Full runtime used by the registered IET ITS protocol.
+# Python 3.10+ is required by the current source syntax.  The historical
+# filename is retained so existing manuscript and protocol references remain
+# reproducible.
+numpy==1.24.4
+scipy==1.10.1
+ortools==9.10.4067
+pyvrp==0.6.3
+alns==6.0.0
