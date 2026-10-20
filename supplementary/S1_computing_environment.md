@@ -1,6 +1,6 @@
 # Supplementary Material S1. Computing Environment and Reproduction Record
 
-This file accompanies the manuscript "An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Last-Mile Routing". It records the software versions, seeds, budgets, and host configuration of the formal comparison.
+This file accompanies the manuscript "An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing". It records the software versions, seeds, budgets, and host configuration of the formal comparison.
 
 ## S1.1. Interpreter and Solvers
 
@@ -77,6 +77,6 @@ Distance is the shortest path on the OpenStreetMap driving network, downloaded t
 
 `records/table08_tolerance_confirmation.csv` is the record for Table 8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table 20.
 
-## S1.5. Files Available on Request During Review
+## S1.5. Repository
 
-The following records are available from the corresponding author: the controlled-instance generator, the normalized inputs, the random-seed map, the common evaluator, and the raw experiment records. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated. The Amazon Last Mile raw data and the third-party solvers are obtained under their own licences, and this paper does not redistribute files it has no right to republish.
+The source code, the controlled-instance generator, the evaluator, and the result records named in S1.4 are in the GitHub repository epsilon-protected-open-routing, at https://github.com/swx441/epsilon-protected-open-routing. The Amazon Last Mile raw data, the normalized matrices derived from it, and the third-party solvers are not included. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated.
