@@ -1,6 +1,8 @@
 # Epsilon-protected output for budgeted open last-mile routing
 
-Code and result records for the manuscript *An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Last-Mile Routing*, submitted to *Applied Sciences*.
+Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing)
+
+Code and result records for the manuscript *An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing*, submitted to *Mathematics*.
 
 The method in the manuscript is JWL-ALNS. The formal protection tolerance is `0.05`. A run that does not pass `--priority-tolerance` uses this value.
 
