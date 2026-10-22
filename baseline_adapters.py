@@ -233,8 +233,8 @@ class _JwlALNSState:
         if self.unassigned or len(self.route) != len(self.context.cost_matrix):
             return float("inf")
         key = _metrics_key(list(self.route), self.context)
-        # Lexicographic (J_WL, tardiness, distance), with gaps large enough that
-        # a worse primary key cannot be offset by a better secondary key.
+        # Scalar encoding of (J_WL, tardiness, distance). The gaps are large, but
+        # a small worsening of the primary key can still be offset by a secondary key.
         return key[0] * 1e12 + key[1] * 1e3 + key[2]
 
 

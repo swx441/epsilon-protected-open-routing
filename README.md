@@ -39,7 +39,7 @@ From this directory:
 python run_experiments.py --mode smoke --output-dir records/smoke
 ```
 
-The manuscript comparison uses `--mode controlled`, seeds 20–39, a budget of 5 seconds, and:
+The manuscript comparison uses `--mode controlled`, seeds 0–19, a budget of 5 seconds, and:
 
 ```bash
 python run_experiments.py --mode controlled --selection-mode priority_guarded --priority-tolerance 0.05
