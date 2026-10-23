@@ -54,36 +54,36 @@ The formal protection tolerance is 0.05. It was chosen once on the development s
 
 ## S1.4. Source of the Tables in the Manuscript
 
-The tables are not the output of one run, except Section 6.7 and Table 20, whose source is given below. In Tables 9 and 11 and in Supplementary Tables S2 and S3, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbour come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Tables 17 and 18, Section 6.6, and Table A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below states the source only; it does not change the values in the manuscript. Paths are relative to the repository root.
+The tables are not the output of one run, except Section 6.7 and Table 18, whose source is given below. In Tables 9 and 10 and in Supplementary Tables S2 and S3, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbour come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Tables 15 and 16, Section 6.6, and Table A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below states the source only; it does not change the values in the manuscript. Paths are relative to the repository root.
 
 | Manuscript | Record file | Seeds and budget |
 | --- | --- | --- |
-| The JWL-ALNS row of Table 9 and Supplementary Table S2, and the JWL-ALNS row of each scenario in Table 11 and Supplementary Table S3; the two JWL-guided rows of Table 14 | `records/table09_12_jwl_alns.csv`, the rows at $\varepsilon=0.05$ | 20 seeds in each of three scenarios, 5 s |
-| Priority-Greedy, Weighted MLP-ILS, and RLS in Tables 9 and 11 and in Supplementary Tables S2 and S3 | `records/table09_12_same_objective.csv` | The same scenarios and seeds as the main experiment, 5 s |
-| OR-Tools, native ALNS, and Nearest-Neighbour in Tables 9 and 11 and in Supplementary Tables S2 and S3 | `records/table09_12_travel_time.csv` | The same scenarios and seeds as the main experiment, 5 s |
+| The JWL-ALNS row of Table 9 and Supplementary Table S2, and the JWL-ALNS row of each scenario in Table 10 and Supplementary Table S3; the two JWL-guided rows of Table 12 | `records/table09_12_jwl_alns.csv`, the rows at $\varepsilon=0.05$ | 20 seeds in each of three scenarios, 5 s |
+| Priority-Greedy, Weighted MLP-ILS, and RLS in Tables 9 and 10 and in Supplementary Tables S2 and S3 | `records/table09_12_same_objective.csv` | The same scenarios and seeds as the main experiment, 5 s |
+| OR-Tools, native ALNS, and Nearest-Neighbour in Tables 9 and 10 and in Supplementary Tables S2 and S3 | `records/table09_12_travel_time.csv` | The same scenarios and seeds as the main experiment, 5 s |
 | Table 7 | `records/table07_tolerance_development.csv` | Development seeds 20–39 |
 | Table 8 | `records/table08_tolerance_confirmation.csv`, the rows at $\varepsilon=0.05$ | Confirmation seeds 60–79 |
-| Table 17 | `records/table17_curvature.csv`, re-selected at $\varepsilon=0.05$ from `records/table17_curvature_archive.csv` | Four curvatures, five seeds in each of three scenarios per curvature, 5 s |
+| Table 15 | `records/table17_curvature.csv`, re-selected at $\varepsilon=0.05$ from `records/table17_curvature_archive.csv` | Four curvatures, five seeds in each of three scenarios per curvature, 5 s |
 | Permutation in Section 6.5 | `records/section65_permutation.csv` | 60 controlled instances, 5 s, $\varepsilon=0.05$ |
-| Table 18 | `records/table18_weights.csv`, re-selected at $\varepsilon=0.05$ from `records/table18_weights_archive.csv` | Four weight settings, 60 instances each, 5 s |
-| Table 19 | `records/table19_exact.csv` | 8, 12, and 16 nodes, 270 instances; the exact dynamic program has no time limit and the heuristic budget is 0.20 s |
-| The two travel-time rows of Table 14 | `records/table14_travel_time_search.csv` | 60 controlled instances, 5 s |
+| Table 16 | `records/table18_weights.csv`, re-selected at $\varepsilon=0.05$ from `records/table18_weights_archive.csv` | Four weight settings, 60 instances each, 5 s |
+| Table 17 | `records/table19_exact.csv` | 8, 12, and 16 nodes, 270 instances; the exact dynamic program has no time limit and the heuristic budget is 0.20 s |
+| The two travel-time rows of Table 12 | `records/table14_travel_time_search.csv` | 60 controlled instances, 5 s |
 | Section 6.6 and Table A1 | `records/section66_tableA1_scale.csv`, re-selected at $\varepsilon=0.05$ from `records/section66_tableA1_scale_archive.csv` | Four sizes, five seeds in each of three scenarios, 1, 5, 10, and 30 s |
-| Section 6.7 and Table 20 | `records/section67_table20/jwl_alns_shard0.csv` to `jwl_alns_shard5.csv`, with the accepted archive in `jwl_alns_archive.csv` | 100 routes, five seeds each, 30 s, $\varepsilon=0.05$ |
+| Section 6.7 and Table 18 | `records/section67_table20/jwl_alns_shard0.csv` to `jwl_alns_shard5.csv`, with the accepted archive in `jwl_alns_archive.csv` | 100 routes, five seeds each, 30 s, $\varepsilon=0.05$ |
 
 The methods other than JWL-ALNS in Section 6.7 come from `records/section67_other_methods/shard0.csv` to `shard5.csv`. They do not use the protection tolerance, so they were not rerun. JWL-ALNS and its priority-only output were rerun at $\varepsilon=0.05$ and selected by Equations (18) and (19) directly. The accepted nondominated archive of each search is saved, and no record was replaced by a fallback.
 
 Distance is the shortest path on the OpenStreetMap driving network, downloaded through OSMnx 1.9.4 from the Overpass API and saved as one graph per metropolitan area: Boston (134,887 nodes), Seattle (121,766), Los Angeles (315,749), Austin (15,941), and Chicago (160,888). The download date is not in the build log, so it cannot be stated. Each stop was snapped to the nearest network node. Across the 100 routes the median snap distance is 47 m, the 90th percentile is 63 m, and the maximum is 156 m. A node pair the driving network leaves unconnected was filled with the great-circle distance multiplied by 1.4. This fills 635 of the 466,008 off-diagonal pairs, on five routes: `RouteID_c28cddb1` (52 pairs), `RouteID_f31379fd` (79), `RouteID_fcddcd15` (76), `RouteID_5fba6b43` (148), and `RouteID_7830df77` (280). Travel time stays the published matrix. Section 6.7 reports the distance result again with these five routes removed.
 
-`records/table08_tolerance_confirmation.csv` is the record for Table 8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table 20.
+`records/table08_tolerance_confirmation.csv` is the record for Table 8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table 18.
 
 ## S1.5. Repository
 
-The source code, the controlled-instance generator, the evaluator, and the result records named in S1.4 are in the GitHub repository epsilon-protected-open-routing, at https://github.com/swx441/epsilon-protected-open-routing. The Amazon Last Mile raw data, the normalized matrices derived from it, and the third-party solvers are not included. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated.
+The source code, the controlled-instance generator, the evaluator, and the result records named in S1.4 are in the GitHub repository epsilon-protected-open-routing, release manuscript-20261022, commit 966034b, at https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022. The Amazon Last Mile raw data, the normalized matrices derived from it, and the third-party solvers are not included. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated.
 
 ## S1.6. Median and Interquartile Range in the 24-Node Main Experiment
 
-The instances, seeds, and budget below are the same as in Tables 9 and 11 of the manuscript, and the source of the records is given in S1.4.
+The instances, seeds, and budget below are the same as in Tables 9 and 10 of the manuscript, and the source of the records is given in S1.4.
 
 ### Supplementary Table S2. Median and interquartile range in the 24-node main experiment
 
@@ -128,6 +128,6 @@ The distributions of tardiness and distance point the same way as the means. Aga
 
 Each cell is the median, with the interquartile range in parentheses, over 20 instances per scenario. The median of Nearest-Neighbour over the pooled 60 instances is in Supplementary Table S2.
 
-The medians point the same way as the means in Table 11 of the manuscript. In the routine and tight time-window scenarios, the median $J_{\mathrm{WL}}$ of JWL-ALNS was the lowest. Under concentrated urgency it equalled the median of Weighted MLP-ILS and RLS and was lower than that of Priority-Greedy.
+The medians point the same way as the means in Table 10 of the manuscript. In the routine and tight time-window scenarios, the median $J_{\mathrm{WL}}$ of JWL-ALNS was the lowest. Under concentrated urgency it equalled the median of Weighted MLP-ILS and RLS and was lower than that of Priority-Greedy.
 
 The medians of tardiness and distance point the same way. OR-Tools and native ALNS had lower median tardiness and distance in all three scenarios, with the smallest gap in the routine scenario and the largest under concentrated urgency.

@@ -1,6 +1,6 @@
 # Epsilon-protected output for budgeted open last-mile routing
 
-Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing)
+Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing), release [manuscript-20261022](https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022), commit `966034b`.
 
 Code and result records for the manuscript *An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing*, submitted to *Mathematics*.
 
@@ -45,7 +45,7 @@ The manuscript comparison uses `--mode controlled`, seeds 0–19, a budget of 5 
 python run_experiments.py --mode controlled --selection-mode priority_guarded --priority-tolerance 0.05
 ```
 
-Do not expect a new run to reproduce the published tables bit for bit. Supplementary S1 states that Tables 9–12 combine three separate runs, and that Tables 17, 18, Section 6.6, and Table A1 were re-selected at `0.05` from archives saved at `0.06`. `reselect_tolerance.py` repeats that re-selection on the archives in `records/`.
+Do not expect a new run to reproduce the published tables bit for bit. Supplementary S1 states that Tables 9, 10, and 12 combine three separate runs, and that Tables 15, 16, Section 6.6, and Table A1 were re-selected at `0.05` from archives saved at `0.06`. `reselect_tolerance.py` repeats that re-selection on the archives in `records/`.
 
 ## Table records
 
@@ -53,18 +53,18 @@ Paths below are the ones named in Supplementary S1.
 
 | Manuscript | File |
 | --- | --- |
-| JWL-ALNS rows of Tables 9–12 and Table 14 | `records/table09_12_jwl_alns.csv` |
+| JWL-ALNS rows of Tables 9, 10, and 12 | `records/table09_12_jwl_alns.csv` |
 | Priority-Greedy, Weighted MLP-ILS, RLS | `records/table09_12_same_objective.csv` |
 | OR-Tools, native ALNS, nearest neighbour | `records/table09_12_travel_time.csv` |
 | Table 7 | `records/table07_tolerance_development.csv` |
 | Table 8 | `records/table08_tolerance_confirmation.csv` |
-| Table 17 | `records/table17_curvature.csv` |
+| Table 15 | `records/table17_curvature.csv` |
 | Permutation in Section 6.5 | `records/section65_permutation.csv` |
-| Table 18 | `records/table18_weights.csv` |
-| Table 19 | `records/table19_exact.csv` |
-| Travel-time rows of Table 14 | `records/table14_travel_time_search.csv` |
+| Table 16 | `records/table18_weights.csv` |
+| Table 17 | `records/table19_exact.csv` |
+| Travel-time rows of Table 12 | `records/table14_travel_time_search.csv` |
 | Section 6.6 and Table A1 | `records/section66_tableA1_scale.csv` |
-| Section 6.7 and Table 20 | `records/section67_table20/` |
+| Section 6.7 and Table 18 | `records/section67_table20/` |
 
 The archives used for the 0.05 re-selection are the `*_archive.csv` files in `records/`. The other methods in Section 6.7 are in `records/section67_other_methods/`.
 
