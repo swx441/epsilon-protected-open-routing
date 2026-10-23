@@ -1,6 +1,6 @@
 # Epsilon-protected output for budgeted open last-mile routing
 
-Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing), release [manuscript-20261022](https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022), commit `966034b`.
+Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing), release [manuscript-20261022](https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022).
 
 Code and result records for the manuscript *An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing*, submitted to *Mathematics*.
 

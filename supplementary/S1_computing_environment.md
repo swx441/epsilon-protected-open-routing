@@ -79,7 +79,7 @@ Distance is the shortest path on the OpenStreetMap driving network, downloaded t
 
 ## S1.5. Repository
 
-The source code, the controlled-instance generator, the evaluator, and the result records named in S1.4 are in the GitHub repository epsilon-protected-open-routing, release manuscript-20261022, commit 966034b, at https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022. The Amazon Last Mile raw data, the normalized matrices derived from it, and the third-party solvers are not included. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated.
+The source code, the controlled-instance generator, the evaluator, and the result records named in S1.4 are in the GitHub repository epsilon-protected-open-routing, release manuscript-20261022, at https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022. The Amazon Last Mile raw data, the normalized matrices derived from it, and the third-party solvers are not included. The interpreter that holds the pinned packages of S1.1, and that produced the Amazon rerun, is not identified by the run logs, which do not record its minor version. The road-network preprocessing used Python 3.8.0. The host configuration is in S1.2; the physical CPU model is not in the console record and cannot be stated.
 
 ## S1.6. Median and Interquartile Range in the 24-Node Main Experiment
 
