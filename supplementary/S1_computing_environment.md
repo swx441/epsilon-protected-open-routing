@@ -4,9 +4,9 @@ This file accompanies the manuscript "A Large Neighborhood Search for the Open V
 
 ## S1.1. Interpreter and Solvers
 
-The tables in the manuscript come from the dependency lock `requirements.txt`. The versions below are stated only where a record confirms them, and the stages are not given one shared Python version.
+The tables in the manuscript come from the dependency lock `requirements.txt`. The versions below are reported only when confirmed by a record, and the stages are not given one shared Python version.
 
-The road-network preprocessing is the one stage tied to a recorded interpreter. The virtual environment that holds OSMnx 1.9.4, and that built the driving networks used for the distances in Section 6.7, is Python 3.8.0, as recorded in its `pyvenv.cfg`. That environment does not contain OR-Tools, PyVRP, or ALNS, so it did not run the comparisons.
+The road-network preprocessing is the one stage tied to a recorded interpreter. The virtual environment that holds OSMnx 1.9.4, and that built the driving networks used for the distances in Section 6.7, uses Python 3.8.0, as recorded in its `pyvenv.cfg`. That environment does not contain OR-Tools, PyVRP, or ALNS, so it did not run the comparisons.
 
 The interpreter that holds the pinned packages of the lock file, and that produced the Amazon rerun in Section 6.7 and the controlled comparisons, is not identified by the console record of those runs. The record gives the package versions and not the Python minor version, so none is stated here. The compiled bytecode left in the repository was produced by more than one Python version and is not used to assign a version to a run.
 
@@ -19,7 +19,7 @@ The interpreter that holds the pinned packages of the lock file, and that produc
 | PyVRP | 0.6.3 |
 | ALNS | 6.0.0 |
 
-PyVRP is kept only as a version record. Section 5.2 of the manuscript explains why the urgency-ignoring hard time-window PyVRP-HGS does not enter Tables 9 and 15.
+PyVRP is listed only as a version record. Section 5.2 of the manuscript explains why the urgency-ignoring hard time-window PyVRP-HGS is not included in Tables 9 and 11.
 
 The implementation languages differ. The vehicle-routing search kernel of OR-Tools 9.10.4067 is C++. The method of this paper, Weighted MLP-ILS, RLS, Priority-Greedy, and native ALNS run in Python; the ALNS package provides only a Python interface. Section 5.4 of the manuscript therefore treats the budget as the search time inside one process, not as an equal number of iterations per second.
 
@@ -37,7 +37,7 @@ The tables were computed on one cloud host. The table below records only what th
 | Data disk | 50 GB base; the console also shows an expandable data disk, and the expansion used here was 0 GB |
 | Image | Development environment, PyTorch 2.5.1, CUDA 12.4.1 (image label V2.5.1, about 18 GB, image time 2025-03-28 00:40:13) |
 
-The search timing of the formal comparison is CPU wall-clock time and does not use the GPU. The PyTorch and CUDA in the image do not enter the solving in Section 5 and do not change the values in Table 9.
+The search timing of the formal comparison is CPU wall-clock time and does not use the GPU. The PyTorch and CUDA in the image are not used in the solve in Section 5 and do not change the values in Table 9.
 
 ## S1.3. Random Seeds and Budgets
 
@@ -50,17 +50,17 @@ The search timing of the formal comparison is CPU wall-clock time and does not u
 | Scale experiment | 24, 48, 80, and 120 nodes | 1, 5, 10, and 30 s |
 | Amazon replay | 100 routes, five seeds each, 500 paired records | 30 s |
 
-The formal protection tolerance is 0.05. It was chosen once on the development set, and the independent seeds only confirm the direction. Timing starts when the search starts. Failed and timed-out records keep their original status.
+The formal protection tolerance is 0.05. It was chosen once on the development set, and the independent seeds are used only to confirm the direction of the effect. Timing starts when the search starts. Failed and timed-out records keep their original status.
 
 ## S1.4. Source of the Tables in the Manuscript
 
-The tables are not the output of one run, except Section 6.7 and Table 18, whose source is given below. In Tables 9 and 10 and in Supplementary Tables S2 and S3, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbour come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Tables 15 and 16, Section 6.6, and Table A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below states the source only; it does not change the values in the manuscript. Paths are relative to the repository root.
+The tables are not the output of one run, except Section 6.7 and Table 18, whose source is given below. In Tables 9 and 10 and in Supplementary Tables S2 and S3, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbor come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Tables 15 and 16, Section 6.6, and Table A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below identifies the source; it does not change the values in the manuscript. Paths are relative to the repository root.
 
 | Manuscript | Record file | Seeds and budget |
 | --- | --- | --- |
 | The JWL-ALNS row of Table 9 and Supplementary Table S2, and the JWL-ALNS row of each scenario in Table 10 and Supplementary Table S3; the two JWL-guided rows of Table 12 | `records/table09_12_jwl_alns.csv`, the rows at $\varepsilon=0.05$ | 20 seeds in each of three scenarios, 5 s |
 | Priority-Greedy, Weighted MLP-ILS, and RLS in Tables 9 and 10 and in Supplementary Tables S2 and S3 | `records/table09_12_same_objective.csv` | The same scenarios and seeds as the main experiment, 5 s |
-| OR-Tools, native ALNS, and Nearest-Neighbour in Tables 9 and 10 and in Supplementary Tables S2 and S3 | `records/table09_12_travel_time.csv` | The same scenarios and seeds as the main experiment, 5 s |
+| OR-Tools, native ALNS, and Nearest-Neighbor in Tables 9 and 10 and in Supplementary Tables S2 and S3 | `records/table09_12_travel_time.csv` | The same scenarios and seeds as the main experiment, 5 s |
 | Table 7 | `records/table07_tolerance_development.csv` | Development seeds 20–39 |
 | Table 8 | `records/table08_tolerance_confirmation.csv`, the rows at $\varepsilon=0.05$ | Confirmation seeds 60–79 |
 | Table 15 | `records/table17_curvature.csv`, re-selected at $\varepsilon=0.05$ from `records/table17_curvature_archive.csv` | Four curvatures, five seeds in each of three scenarios per curvature, 5 s |
@@ -73,9 +73,9 @@ The tables are not the output of one run, except Section 6.7 and Table 18, whose
 
 The methods other than JWL-ALNS in Section 6.7 come from `records/section67_other_methods/shard0.csv` to `shard5.csv`. They do not use the protection tolerance, so they were not rerun. JWL-ALNS and its priority-only output were rerun at $\varepsilon=0.05$ and selected by Equations (18) and (19) directly. The accepted nondominated archive of each search is saved, and no record was replaced by a fallback.
 
-Distance is the shortest path on the OpenStreetMap driving network, downloaded through OSMnx 1.9.4 from the Overpass API and saved as one graph per metropolitan area: Boston (134,887 nodes), Seattle (121,766), Los Angeles (315,749), Austin (15,941), and Chicago (160,888). The download date is not in the build log, so it cannot be stated. Each stop was snapped to the nearest network node. Across the 100 routes the median snap distance is 47 m, the 90th percentile is 63 m, and the maximum is 156 m. A node pair the driving network leaves unconnected was filled with the great-circle distance multiplied by 1.4. This fills 635 of the 466,008 off-diagonal pairs, on five routes: `RouteID_c28cddb1` (52 pairs), `RouteID_f31379fd` (79), `RouteID_fcddcd15` (76), `RouteID_5fba6b43` (148), and `RouteID_7830df77` (280). Travel time stays the published matrix. Section 6.7 reports the distance result again with these five routes removed.
+Distance is the shortest path on the OpenStreetMap driving network, downloaded through OSMnx 1.9.4 from the Overpass API and saved as one graph per metropolitan area: Boston (134,887 nodes), Seattle (121,766), Los Angeles (315,749), Austin (15,941), and Chicago (160,888). The download date is not in the build log, so it cannot be stated. Each stop was snapped to the nearest network node. Across the 100 routes the median snap distance is 47 m, the 90th percentile is 63 m, and the maximum is 156 m. For node pairs left unconnected by the driving network, the distance was filled with the great-circle distance multiplied by 1.4. This fills 635 of the 466,008 off-diagonal pairs, on five routes: `RouteID_c28cddb1` (52 pairs), `RouteID_f31379fd` (79), `RouteID_fcddcd15` (76), `RouteID_5fba6b43` (148), and `RouteID_7830df77` (280). Travel time stays the published matrix. Section 6.7 reports the distance result again with these five routes removed.
 
-`records/table08_tolerance_confirmation.csv` is the record for Table 8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table 18.
+`records/table08_tolerance_confirmation.csv` provides the records for Table 8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table 18.
 
 ## S1.5. Repository
 
@@ -95,13 +95,13 @@ The instances, seeds, and budget below are the same as in Tables 9 and 10 of the
 | RLS | 0.0824 (0.0588) | 451.1 (196.4) | 3636 (1027) | 4117 (1171) |
 | OR-Tools Open-SVRPTW | 0.0824 (0.0122) | 274.5 (182.9) | 2548 (312) | 2870 (347) |
 | Native ALNS | 0.0875 (0.0122) | 294.4 (178.8) | 2488 (136) | 2815 (178) |
-| Nearest-Neighbour | 0.0877 (0.0136) | 312.6 (163.8) | 3011 (226) | 3382 (263) |
+| Nearest-Neighbor | 0.0877 (0.0136) | 312.6 (163.8) | 3011 (226) | 3382 (263) |
 
 Each cell is the median, with the interquartile range in parentheses. The instances are the same 60 as in Table 9 of the manuscript.
 
-The median of $J_{\mathrm{WL}}$ differs from the mean in Table 9. The gap comes from the concentrated-urgency scenario, whose $J_{\mathrm{WL}}$ clusters near 0.027 and pulls the mean down. With 20 instances in each scenario, the median falls in one of the other two. By the median, JWL-ALNS remained the lowest of the seven methods. The median gaps against the three same-objective heuristics were 0.0053 to 0.0087, larger than the mean gaps of 0.0045 to 0.0051; once the concentrated scenario pulls the mean down, the gap is proportionally larger. The median $J_{\mathrm{WL}}$ of OR-Tools was 0.0824, equal to three decimals with Weighted MLP-ILS and RLS. Its mean is higher because the concentrated scenario does not pull it down.
+The median of $J_{\mathrm{WL}}$ differs from the mean in Table 9. The gap comes from the concentrated-urgency scenario, whose $J_{\mathrm{WL}}$ clusters near 0.027 and pulls the mean down. With 20 instances in each scenario, the median falls in one of the other two. By the median, JWL-ALNS remained the lowest of the seven methods. The median gaps against the three same-objective heuristics were 0.0053 to 0.0087, larger than the mean gaps of 0.0045 to 0.0051; once the concentrated scenario pulls the mean down, the gap is proportionally larger. The median $J_{\mathrm{WL}}$ of OR-Tools was 0.0824, equal to the values reported for Weighted MLP-ILS and RLS when rounded to three decimal places. Its mean is higher because the concentrated scenario does not pull it down.
 
-The distributions of tardiness and distance point the same way as the means. Against the three same-objective heuristics, the median tardiness of JWL-ALNS was lower by 96 to 205 generated time units and the median distance by 775 to 900. Against OR-Tools and native ALNS the direction reverses: their median tardiness was lower by 56.6 and 77.4, and their median distance by 313 and 374. The median distance of Nearest-Neighbour was 150 higher than that of JWL-ALNS, in the same direction as the higher mean distance in Table 9.
+The distributions of tardiness and distance point the same way as the means. Against the three same-objective heuristics, the median tardiness of JWL-ALNS was lower by 96 to 205 generated time units and the median distance by 775 to 900. Against OR-Tools and native ALNS the direction reverses: their median tardiness was lower by 56.6 and 77.4 generated time units, respectively, and their median distance was lower by 313 and 374 distance units, respectively. The median distance of Nearest-Neighbor was 150 higher than that of JWL-ALNS, in the same direction as the higher mean distance in Table 9.
 
 ### Supplementary Table S3. Median and interquartile range under three service-pressure scenarios
 
@@ -126,7 +126,7 @@ The distributions of tardiness and distance point the same way as the means. Aga
 | Tight time windows | OR-Tools | 0.0834 (0.0087) | 408.9 (14.4) | 2554 (294) | 2875 (324) |
 | Tight time windows | Native ALNS | 0.0888 (0.0069) | 424.9 (23.7) | 2488 (132) | 2815 (141) |
 
-Each cell is the median, with the interquartile range in parentheses, over 20 instances per scenario. The median of Nearest-Neighbour over the pooled 60 instances is in Supplementary Table S2.
+Each cell is the median, with the interquartile range in parentheses, over 20 instances per scenario. The median of Nearest-Neighbor over the pooled 60 instances is in Supplementary Table S2.
 
 The medians point the same way as the means in Table 10 of the manuscript. In the routine and tight time-window scenarios, the median $J_{\mathrm{WL}}$ of JWL-ALNS was the lowest. Under concentrated urgency it equalled the median of Weighted MLP-ILS and RLS and was lower than that of Priority-Greedy.
 
