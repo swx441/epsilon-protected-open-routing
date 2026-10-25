@@ -1,6 +1,6 @@
 # Supplementary Material S1. Computing Environment, Reproduction Record, and Median Tables
 
-This file accompanies the manuscript "An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing". It records the software versions, seeds, budgets, and host configuration of the formal comparison, and it reports the medians and interquartile ranges that the manuscript summarizes in Section 6.2.
+This file accompanies the manuscript "A Large Neighborhood Search for the Open Vehicle Routing Problem with Urgency-Weighted Service Latency and Tolerance-Constrained Route Selection by Tardiness and Distance". It records the software versions, seeds, budgets, and host configuration of the formal comparison, and it reports the medians and interquartile ranges that the manuscript summarizes in Section 6.2.
 
 ## S1.1. Interpreter and Solvers
 

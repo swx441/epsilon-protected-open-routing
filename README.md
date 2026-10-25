@@ -2,7 +2,7 @@
 
 Repository: [epsilon-protected-open-routing](https://github.com/swx441/epsilon-protected-open-routing), release [manuscript-20261022](https://github.com/swx441/epsilon-protected-open-routing/releases/tag/manuscript-20261022).
 
-Code and result records for the manuscript *An Epsilon-Protected Output Rule for Urgency-Weighted Service Latency in Budgeted Open Routing*, submitted to *Mathematics*.
+Code and result records for the manuscript *A Large Neighborhood Search for the Open Vehicle Routing Problem with Urgency-Weighted Service Latency and Tolerance-Constrained Route Selection by Tardiness and Distance*, submitted to *Mathematics*.
 
 The method in the manuscript is JWL-ALNS. The formal protection tolerance is `0.05`. A run that does not pass `--priority-tolerance` uses this value.
 
