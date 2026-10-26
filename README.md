@@ -45,7 +45,7 @@ The manuscript comparison uses `--mode controlled`, seeds 0–19, a budget of 5 
 python run_experiments.py --mode controlled --selection-mode priority_guarded --priority-tolerance 0.05
 ```
 
-Do not expect a new run to reproduce the published tables bit for bit. Supplementary S1 states that Tables 9, 10, and 12 combine three separate runs, and that Tables 15, 16, Section 6.6, and Table A1 were re-selected at `0.05` from archives saved at `0.06`. `reselect_tolerance.py` repeats that re-selection on the archives in `records/`.
+Do not expect a new run to reproduce the published tables bit for bit. Supplementary S1 states that Tables 9 and 10, together with Supplementary Tables S2 and S3, combine three separate runs, and that Table 13, Supplementary Tables S6 and S7, Section 6.6, and Table A1 were re-selected at `0.05` from archives saved at `0.06`. `reselect_tolerance.py` repeats that re-selection on the archives in `records/`.
 
 ## Table records
 
@@ -58,13 +58,13 @@ Paths below are the ones named in Supplementary S1.
 | OR-Tools, native ALNS, nearest neighbour | `records/table09_12_travel_time.csv` |
 | Table 7 | `records/table07_tolerance_development.csv` |
 | Table 8 | `records/table08_tolerance_confirmation.csv` |
-| Table 15 | `records/table17_curvature.csv` |
+| Supplementary Table S6 | `records/table17_curvature.csv` |
 | Permutation in Section 6.5 | `records/section65_permutation.csv` |
-| Table 16 | `records/table18_weights.csv` |
-| Table 17 | `records/table19_exact.csv` |
-| Travel-time rows of Table 12 | `records/table14_travel_time_search.csv` |
+| Table 13 and Supplementary Table S7 | `records/table18_weights.csv` |
+| Table 14 | `records/table19_exact.csv` |
+| Travel-time rows of Table 11 | `records/table14_travel_time_search.csv` |
 | Section 6.6 and Table A1 | `records/section66_tableA1_scale.csv` |
-| Section 6.7 and Table 18 | `records/section67_table20/` |
+| Section 6.7 and Table 15 | `records/section67_table20/` |
 
 The archives used for the 0.05 re-selection are the `*_archive.csv` files in `records/`. The other methods in Section 6.7 are in `records/section67_other_methods/`.
 

@@ -45,7 +45,7 @@ ALNS & 6.0.0 \\
 \end{tabular}
 \end{center}
 
-PyVRP is listed only as a version record. Section~5.2 of the manuscript explains why the urgency-ignoring hard time-window PyVRP-HGS is not included in Tables~9 and~11.
+PyVRP is listed only as a version record. Section~5.2 of the manuscript explains why the urgency-ignoring hard time-window PyVRP-HGS is not included in Tables~9 and~10.
 
 The implementation languages differ. The vehicle-routing search kernel of OR-Tools~9.10.4067 is C++. The method of this paper, Weighted MLP-ILS, RLS, Priority-Greedy, and native ALNS run in Python; the ALNS package provides only a Python interface. Section~5.4 of the manuscript therefore treats the budget as the search time inside one process, not as an equal number of iterations per second.
 
@@ -93,29 +93,30 @@ The formal protection tolerance is 0.05. It was chosen once on the development s
 
 \section{Source of the Tables in the Manuscript}
 
-The tables are not the output of one run, except Section~6.7 and Table~18, whose source is given below. In Tables~9 and~10 and in Supplementary Tables~S2 and~S3, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbor come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Tables~15 and~16, Section~6.6, and Table~A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below identifies the source; it does not change the values in the manuscript. Paths are relative to the repository root.
+The tables are not the output of one run, except Section~6.7 and Table~15, whose source is given below. In Tables~9 and~10 and in Supplementary Tables~S2, S3, and~S4, the JWL-ALNS row, the three same-objective heuristics, and OR-Tools, native ALNS, and Nearest-Neighbor come from three separate runs, using the same evaluator, the same scenario definitions, and the same wall-clock budget. The tolerance scan, the exact reference, and the attribution were rerun after the tolerance was changed to 0.05. The search archives of the curvature, the weights, and the scale experiment were saved at tolerance 0.06; the values in Supplementary Tables~S6 and~S7, Table~13, Section~6.6, and Table~A1 were re-selected from those archives at $\varepsilon=0.05$, without rerunning the search. The permutation experiment saved no archive and was rerun at $\varepsilon=0.05$. The table below identifies the source; it does not change the values in the manuscript. Paths are relative to the repository root.
 
 {\small
 \begin{description}[style=nextline,leftmargin=1.5em,itemsep=0.55em]
-\item[Table~9 and Supplementary Table~S2, the JWL-ALNS row; Table~10 and Supplementary Table~S3, the JWL-ALNS row of each scenario; Table~12, the two JWL-guided rows.] \path{records/table09_12_jwl_alns.csv}, the rows at $\varepsilon=0.05$. 20 seeds in each of three scenarios, 5~s.
-\item[Tables~9 and~10 and Supplementary Tables~S2 and~S3, the rows for Priority-Greedy, Weighted MLP-ILS, and RLS.] \path{records/table09_12_same_objective.csv}. The same scenarios and seeds as the main experiment, 5~s.
-\item[Tables~9 and~10 and Supplementary Tables~S2 and~S3, the rows for OR-Tools, native ALNS, and Nearest-Neighbor.] \path{records/table09_12_travel_time.csv}. The same scenarios and seeds as the main experiment, 5~s.
+\item[Table~9 and Supplementary Table~S2, the JWL-ALNS row; Table~10 and Supplementary Tables~S3 and~S4, the JWL-ALNS row of each scenario; Table~11, the two JWL-guided rows.] \path{records/table09_12_jwl_alns.csv}, the rows at $\varepsilon=0.05$. 20 seeds in each of three scenarios, 5~s.
+\item[Tables~9 and~10 and Supplementary Tables~S2, S3, and~S4, the rows for Priority-Greedy, Weighted MLP-ILS, and RLS.] \path{records/table09_12_same_objective.csv}. The same scenarios and seeds as the main experiment, 5~s.
+\item[Tables~9 and~10 and Supplementary Tables~S2, S3, and~S4, the rows for OR-Tools, native ALNS, and Nearest-Neighbor.] \path{records/table09_12_travel_time.csv}. The same scenarios and seeds as the main experiment, 5~s.
 \item[Table~7.] \path{records/table07_tolerance_development.csv}. Development seeds 20--39.
 \item[Table~8.] \path{records/table08_tolerance_confirmation.csv}, the rows at $\varepsilon=0.05$. Confirmation seeds 60--79.
-\item[Table~15.] \path{records/table17_curvature.csv}, re-selected at $\varepsilon=0.05$ from \path{records/table17_curvature_archive.csv}. Four curvatures, five seeds in each of three scenarios per curvature, 5~s.
+\item[Supplementary Table~S5.] \path{records/table09_12_jwl_alns.csv}, \path{records/table09_12_same_objective.csv}, and \path{records/table09_12_travel_time.csv}. The paired comparisons of tardiness and distance on the same 60 instances as Table~12, 5~s.
+\item[Supplementary Table~S6.] \path{records/table17_curvature.csv}, re-selected at $\varepsilon=0.05$ from \path{records/table17_curvature_archive.csv}. Four curvatures, five seeds in each of three scenarios per curvature, 5~s.
 \item[The permutation in Section~6.5.] \path{records/section65_permutation.csv}. 60 controlled instances, 5~s, $\varepsilon=0.05$.
-\item[Table~16.] \path{records/table18_weights.csv}, re-selected at $\varepsilon=0.05$ from \path{records/table18_weights_archive.csv}. Four weight settings, 60 instances each, 5~s.
-\item[Table~17.] \path{records/table19_exact.csv}. 8, 12, and 16 nodes, 270 instances; the exact dynamic program has no time limit and the heuristic budget is 0.20~s.
-\item[Table~12, the two travel-time rows.] \path{records/table14_travel_time_search.csv}. 60 controlled instances, 5~s.
+\item[Table~13 and Supplementary Table~S7.] \path{records/table18_weights.csv}, re-selected at $\varepsilon=0.05$ from \path{records/table18_weights_archive.csv}. Four weight settings, 60 instances each, 5~s.
+\item[Table~14.] \path{records/table19_exact.csv}. 8, 12, and 16 nodes, 270 instances; the exact dynamic program has no time limit and the heuristic budget is 0.20~s.
+\item[Table~11, the two travel-time rows.] \path{records/table14_travel_time_search.csv}. 60 controlled instances, 5~s.
 \item[Section~6.6 and Table~A1.] \path{records/section66_tableA1_scale.csv}, re-selected at $\varepsilon=0.05$ from \path{records/section66_tableA1_scale_archive.csv}. Four sizes, five seeds in each of three scenarios, 1, 5, 10, and 30~s.
-\item[Section~6.7 and Table~18.] \path{records/section67_table20/jwl_alns_shard0.csv} to \path{jwl_alns_shard5.csv}, with the accepted archive in \path{jwl_alns_archive.csv}. 100 routes, five seeds each, 30~s, $\varepsilon=0.05$.
+\item[Section~6.7 and Table~15.] \path{records/section67_table20/jwl_alns_shard0.csv} to \path{jwl_alns_shard5.csv}, with the accepted archive in \path{jwl_alns_archive.csv}. 100 routes, five seeds each, 30~s, $\varepsilon=0.05$.
 \end{description}}
 
 The methods other than JWL-ALNS in Section~6.7 come from \path{records/section67_other_methods/shard0.csv} to \path{shard5.csv}. They do not use the protection tolerance, so they were not rerun. JWL-ALNS and its priority-only output were rerun at $\varepsilon=0.05$ and selected by Equations~(18) and~(19) directly. The accepted nondominated archive of each search is saved, and no record was replaced by a fallback.
 
 Distance is the shortest path on the OpenStreetMap driving network, downloaded through OSMnx~1.9.4 from the Overpass API and saved as one graph per metropolitan area: Boston (134,887 nodes), Seattle (121,766), Los Angeles (315,749), Austin (15,941), and Chicago (160,888). The download date is not in the build log, so it cannot be stated. Each stop was snapped to the nearest network node. Across the 100 routes the median snap distance is 47~m, the 90th percentile is 63~m, and the maximum is 156~m. For node pairs left unconnected by the driving network, the distance was filled with the great-circle distance multiplied by 1.4. This fills 635 of the 466,008 off-diagonal pairs, on five routes: \path{RouteID_c28cddb1} (52 pairs), \path{RouteID_f31379fd} (79), \path{RouteID_fcddcd15} (76), \path{RouteID_5fba6b43} (148), and \path{RouteID_7830df77} (280). Travel time stays the published matrix. Section~6.7 reports the distance result again with these five routes removed.
 
-\path{records/table08_tolerance_confirmation.csv} provides the records for Table~8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table~18.
+\path{records/table08_tolerance_confirmation.csv} provides the records for Table~8. An older confirmation file at tolerance 0.06 does not correspond to that table. An earlier Amazon file that uses a different set of routes does not correspond to Table~15.
 
 \section{Repository}
 
@@ -123,7 +124,7 @@ The source code, the controlled-instance generator, the evaluator, and the resul
 
 \section{Median and Interquartile Range in the 24-Node Main Experiment}
 
-The instances, seeds, and budget below are the same as in Tables~9 and~10 of the manuscript, and the source of the records is given in S1.4.
+The instances, seeds, and budget below are the same as in Tables~9 and~10 and Supplementary Table~S4 of the manuscript, and the source of the records is given in S1.4.
 
 \subsection*{Supplementary Table S2. Median and interquartile range in the 24-node main experiment}
 
@@ -183,8 +184,117 @@ Tight time windows & Native ALNS & 0.0888 (0.0069) & 424.9 (23.7) & 2488 (132) &
 
 Each cell is the median, with the interquartile range in parentheses, over 20 instances per scenario. Tardiness is in generated time units. The median of Nearest-Neighbor over the pooled 60 instances is in Supplementary Table~S2.
 
-The medians point the same way as the means in Table~10 of the manuscript. In the routine and tight time-window scenarios, the median $J_{\mathrm{WL}}$ of JWL-ALNS was the lowest. Under concentrated urgency it equalled the median of Weighted MLP-ILS and RLS and was lower than that of Priority-Greedy.
+The medians point the same way as the means in Table~10 and Supplementary Table~S4 of the manuscript. In the routine and tight time-window scenarios, the median $J_{\mathrm{WL}}$ of JWL-ALNS was the lowest. Under concentrated urgency it equalled the median of Weighted MLP-ILS and RLS and was lower than that of Priority-Greedy.
 
 The medians of tardiness and distance point the same way. OR-Tools and native ALNS had lower median tardiness and distance in all three scenarios, with the smallest gap in the routine scenario and the largest under concentrated urgency.
+
+\section{Tables Moved Out of the Manuscript}
+
+The tables below keep the values that the manuscript no longer prints in full. Each one is cited at its first mention in the manuscript, and none of the values was recomputed.
+
+\subsection*{Supplementary Table S4. Full stratification of the main experiment under three service-pressure scenarios}
+
+The manuscript prints only the four methods that use $J_{\mathrm{WL}}$ as the first key, and only tardiness, distance, and envelope feasibility. This table adds OR-Tools and native ALNS, travel time, and mean $V$. Each block uses 20 instances. The operational envelope is determined by $P^{\mathrm{NN}}$ frozen before the runs, and every method uses the same boundary.
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccccc}
+\toprule
+Scenario & Method & $J_{\mathrm{WL}}$ & Tardiness & Distance & Travel time & Envelope feasible & Mean $V$ \\
+\midrule
+Concentrated urgency & JWL-ALNS & 0.027251 & 323.039 & 2980.850 & 3380.741 & 4/20 & 0.238 \\
+Concentrated urgency & Priority-Greedy & 0.028520 & 561.182 & 4097.850 & 4661.215 & 0/20 & 1.528 \\
+Concentrated urgency & Weighted MLP-ILS & 0.027210 & 422.782 & 3755.000 & 4259.168 & 0/20 & 0.817 \\
+Concentrated urgency & RLS & 0.027210 & 476.405 & 3998.300 & 4544.338 & 0/20 & 1.178 \\
+Concentrated urgency & OR-Tools & 0.073972 & 210.993 & 2573.550 & 2913.955 & 20/20 & 0 \\
+Concentrated urgency & Native ALNS & 0.076433 & 223.616 & 2509.200 & 2840.828 & 20/20 & 0 \\
+Routine & JWL-ALNS & 0.080503 & 299.334 & 2776.100 & 3147.648 & 20/20 & 0 \\
+Routine & Priority-Greedy & 0.084962 & 396.139 & 3366.800 & 3815.003 & 2/20 & 0.259 \\
+Routine & Weighted MLP-ILS & 0.086292 & 388.829 & 3428.850 & 3881.628 & 3/20 & 0.270 \\
+Routine & RLS & 0.087221 & 336.850 & 3168.950 & 3588.436 & 14/20 & 0.116 \\
+Routine & OR-Tools & 0.085067 & 275.981 & 2562.850 & 2906.658 & 20/20 & 0 \\
+Routine & Native ALNS & 0.088148 & 292.306 & 2501.100 & 2832.025 & 20/20 & 0 \\
+Tight time windows & JWL-ALNS & 0.076264 & 447.715 & 2819.050 & 3206.024 & 17/20 & 0.003 \\
+Tight time windows & Priority-Greedy & 0.084119 & 626.083 & 3709.050 & 4210.723 & 0/20 & 0.503 \\
+Tight time windows & Weighted MLP-ILS & 0.084970 & 601.726 & 3802.600 & 4302.614 & 2/20 & 0.491 \\
+Tight time windows & RLS & 0.084783 & 582.284 & 3656.850 & 4146.217 & 7/20 & 0.447 \\
+Tight time windows & OR-Tools & 0.085250 & 411.731 & 2613.200 & 2965.028 & 20/20 & 0 \\
+Tight time windows & Native ALNS & 0.089522 & 430.802 & 2501.100 & 2832.025 & 20/20 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Tardiness and travel time are in generated time units. OR-Tools and native ALNS were envelope-feasible on 20 of 20 instances in every scenario, and under concentrated urgency their $J_{\mathrm{WL}}$ was about 2.7 times that of the same-objective methods.
+
+\subsection*{Supplementary Table S5. Paired comparisons of tardiness and distance in the 24-node main experiment}
+
+$\Delta$ is JWL-ALNS minus the baseline, over the same 60 paired instances as the paired comparison of $J_{\mathrm{WL}}$ in the manuscript, and a negative value means that JWL-ALNS is lower. Intervals come from 2,000 paired bootstrap resamples with seed 20260908. The Holm adjustment covers all 12 rows of this table and is not pooled with the $J_{\mathrm{WL}}$ family. The effect size is the rank-biserial correlation. The paired direction of travel time matches that of distance.
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llccccc}
+\toprule
+Baseline & Metric & Mean $\Delta$ & 95\% bootstrap interval & Holm-adjusted $p$ & Effect size & Win/tie/loss (\%) \\
+\midrule
+Priority-Greedy & Tardiness & $-171.106$ & [$-192.669$, $-149.667$] & $<0.001$ & $+1.000$ & 100/0/0 \\
+Priority-Greedy & Distance & $-865.9$ & [$-964.9$, $-763.0$] & $<0.001$ & $+0.999$ & 96.7/1.7/1.7 \\
+Weighted MLP-ILS & Tardiness & $-114.417$ & [$-130.070$, $-100.127$] & $<0.001$ & $+1.000$ & 100/0/0 \\
+Weighted MLP-ILS & Distance & $-803.5$ & [$-919.6$, $-686.2$] & $<0.001$ & $+0.972$ & 91.7/0/8.3 \\
+RLS & Tardiness & $-108.484$ & [$-134.365$, $-84.874$] & $<0.001$ & $+0.920$ & 85.0/0/15.0 \\
+RLS & Distance & $-749.4$ & [$-903.4$, $-596.8$] & $<0.001$ & $+0.948$ & 91.7/0/8.3 \\
+OR-Tools & Tardiness & $+57.128$ & [$+43.712$, $+70.662$] & $<0.001$ & $-0.993$ & 3.3/0/96.7 \\
+OR-Tools & Distance & $+275.5$ & [$+210.3$, $+340.2$] & $<0.001$ & $-0.869$ & 16.7/0/83.3 \\
+Native ALNS & Tardiness & $+41.121$ & [$+27.081$, $+55.189$] & $<0.001$ & $-0.783$ & 18.3/0/81.7 \\
+Native ALNS & Distance & $+354.9$ & [$+295.6$, $+415.3$] & $<0.001$ & $-0.978$ & 5.0/0/95.0 \\
+Nearest-Neighbor & Tardiness & $+25.793$ & [$+11.769$, $+40.316$] & $0.023$ & $-0.337$ & 38.3/0/61.7 \\
+Nearest-Neighbor & Distance & $-124.3$ & [$-195.1$, $-54.0$] & $0.006$ & $+0.438$ & 63.3/0/36.7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Against the three heuristics that use $J_{\mathrm{WL}}$ as the first key, both tardiness and distance were lower, every interval lay below zero, and every adjusted $p$-value was below 0.001. Against OR-Tools and native ALNS the direction reverses on both metrics: their routes are shorter and less tardy, and their $J_{\mathrm{WL}}$ is higher. Nearest-Neighbor falls between the two groups, with higher tardiness and lower distance.
+
+\subsection*{Supplementary Table S6. Results under different urgency curvatures}
+
+Changing $\gamma$ changes the urgency weights and therefore the objective itself, so a lower $J_{\mathrm{WL}}$ under a different curvature is not a performance gain. The formal experiment fixes $\gamma=1.0$ before the main experiment, and this table is not used to choose among the curvatures.
+
+\begin{center}
+\small
+\begin{tabular}{cccccc}
+\toprule
+$\gamma$ & $J_{\mathrm{WL}}$ & Tardiness & Distance & Travel time & Instances rewritten \\
+\midrule
+0.5 & 0.0650 & 351.407 & 2853.1 & 3249.066 & 9/15 \\
+1.0 & 0.0620 & 356.491 & 2817.9 & 3216.299 & 5/15 \\
+1.5 & 0.0603 & 355.271 & 2748.1 & 3141.872 & 3/15 \\
+2.0 & 0.0602 & 356.785 & 2768.7 & 3165.652 & 3/15 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each row uses five seeds in each of three scenario classes, 15 instances in total, reselected at $\varepsilon=0.05$ from the archive saved at 0.06. Tardiness and travel time are in generated time units. The absolute values are not those of the 24-node main experiment.
+
+\subsection*{Supplementary Table S7. Protected band under different urgency weights, with absolute values}
+
+The manuscript keeps the change columns. This table adds the absolute level of each metric under the same four weight settings.
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccc}
+\toprule
+$\lambda$ & $J_{\mathrm{WL}}$ & Tardiness & Distance & Travel time & Instances rewritten & $\Delta J_{\mathrm{WL}}$ & Change in tardiness \\
+\midrule
+$(0,1,0)$ & 0.0460 & 456.834 & 3272.3 & 3711.538 & 23/60 & +0.62\% & $-$1.51\% \\
+$(0.20,0.20,0.60)$ & 0.0608 & 364.095 & 2939.1 & 3335.985 & 20/60 & +0.53\% & $-$1.49\% \\
+$(0.20,0.60,0.20)$ & 0.0614 & 356.717 & 2865.2 & 3251.902 & 23/60 & +1.08\% & $-$2.97\% \\
+$(1/3,1/3,1/3)$ & 0.0617 & 358.548 & 2861.7 & 3247.212 & 20/60 & +0.45\% & $-$1.24\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$\Delta J_{\mathrm{WL}}$ and the change in tardiness are the protected output relative to the priority-only route of the same search, computed as the ratio of the means. The rows are reselected at $\varepsilon=0.05$ from the archive saved at 0.06. Tardiness and travel time are in generated time units. The absolute values are not those of the 24-node main experiment: 0.0614 is not the 0.061340 reported there.
 
 \end{document}
